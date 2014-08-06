@@ -1,0 +1,70 @@
+//
+// Labels
+// --------------------------------------------------
+
+.label {
+  background-color: @label-default-bg;
+  color: @label-color;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  margin: 0 10px 6px 0;
+  padding: 0 15px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  &:before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 0 9px 10px;
+    border-color: transparent transparent transparent @label-default-bg;
+    right: -10px;
+  }
+  &:after {
+    background-color: #fff;
+    .square(8px);
+    border-radius: 10px;
+    right: 0;
+    top: 5px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #b2d4ec;
+
+    &:before {
+      border-color: transparent transparent transparent #b2d4ec;
+    }
+  }
+
+  // Add hover effects, but only for links
+  a& {
+    &:hover,
+    &:focus {
+      color: @label-link-hover-color;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  // Empty labels collapse automatically (not available in IE8)
+  &:empty {
+    display: none;
+  }
+
+  // Quick fix for labels in buttons
+  .btn & {
+    position: relative;
+    top: -1px;
+  }
+}
