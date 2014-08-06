@@ -37,4 +37,3 @@ function contentCtrl($scope) {
         _modal.modal('hide');
     }
 }
-
