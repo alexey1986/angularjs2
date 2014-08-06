@@ -1,0 +1,16 @@
+<div class="blog-item" ng-repeat="item in content track by $index">
+    <img class="img-responsive" ng-src="{{item.image}}" alt="" />
+    <h3>{{item.title}}</h3>
+    <div class="item-additionals">
+        <ul class="social-buttons pull-right">
+            <li><a class="s-btn social-1" href="#"></a></li>
+            <li><a class="s-btn social-2" href="#"></a></li>
+            <li><a class="s-btn social-3" href="#"></a></li>
+            <li><a class="s-btn social-4" href="#"></a></li>
+            <li><a class="s-btn social-5" href="#"></a></li>
+        </ul>
+        <span class="date" href="#"><i class="ico-clock"></i>{{item.date}}</span>
+        <a class="author" href="#"><i class="ico-trade"></i>by {{item.author}}</a>
+    </div>
+    <p>{{item.text}}</p>
+</div>

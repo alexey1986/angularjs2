@@ -1,0 +1,36 @@
+<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form ng-submit="addPost()"  class="modal-content" name="postForm" novalidate role="form">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Add New Post</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" ng-class="{'has-error': postForm.author.$invalid, 'has-success': !postForm.author.$invalid }">
+                    <label>Author</label>
+                    <input type="text" name="author" class="form-control" placeholder="Enter you name" ng-model="contentItem.author" required />
+                    <span ng-show="postForm.author.$error.required">This field is required</span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': postForm.title.$invalid, 'has-success': !postForm.title.$invalid }">
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control" placeholder="Enter the title" ng-model="contentItem.title" required />
+                    <span data-ng-show=" postForm.title.$error.required">This field is required</span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': postForm.text.$invalid, 'has-success': !postForm.text.$invalid }">
+                    <label>Text</label>
+                    <textarea name="text" cols="40" rows="10" class="form-control" placeholder="Enter tha main content" ng-model="contentItem.text" required></textarea>
+                    <span data-ng-show="postForm.text.$error.required">This field is required</span>
+                </div>
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="file" name="image" class="form-control" data-file="contentItem.image"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clearPost()">Cancel</button>
+                <button type="reset" class="btn btn-default">Reset</button>
+                <button type="submit" class="btn btn-success" ng-disabled="postForm.$invalid">Add Post</button>
+            </div>
+        </form>
+    </div>
+</div>
