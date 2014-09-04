@@ -1,0 +1,14 @@
+<div class="blog-item" data-id="{{item._id}}">
+    <h1>{{item.title}}</h1>
+    <br />
+    <img class="img-responsive" ng-src="{{item.image}}" alt="" />
+    <br />
+    <div class="item-additionals">
+        <span class="date" href="#"><i class="ico-clock"></i>{{item.date}}</span>
+        <a class="author" href="mailto:{{item.email}}"><i class="ico-trade"></i>by {{item.author}}</a>
+    </div>
+    <p>{{item.body}}</p>
+    <a href="/" class="btn btn-sm btn-default">Back to blog list</a>
+    <a href="javascript:void(0)" ng-click="edit(this)" class="btn btn-sm btn-default">Edit Post</a>
+    <a href="javascript:void(0)" ng-click="delete(this)" class="btn btn-sm btn-default">Delete Post</a>
+</div>

@@ -18,8 +18,8 @@
                 </div>
                 <div class="form-group" ng-class="{'has-error': postForm.text.$invalid, 'has-success': !postForm.text.$invalid }">
                     <label>Text</label>
-                    <textarea name="text" cols="40" rows="10" class="form-control" placeholder="Enter tha main content" ng-model="contentItem.text" required></textarea>
-                    <span data-ng-show="postForm.text.$error.required">This field is required</span>
+                    <textarea name="text" cols="40" rows="10" class="form-control" placeholder="Enter tha main content" ng-model="contentItem.body" required></textarea>
+                    <span data-ng-show="postForm.body.$error.required">This field is required</span>
                 </div>
                 <div class="form-group">
                     <label>Image</label>

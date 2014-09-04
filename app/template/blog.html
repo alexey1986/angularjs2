@@ -1,16 +1,18 @@
-<div class="blog-item" ng-repeat="item in content track by $index">
-    <img class="img-responsive" ng-src="{{item.image}}" alt="" />
-    <h3>{{item.title}}</h3>
+<div class="blog-item" ng-repeat="item in content track by $index" id="{{item.id}}" data-id="{{item._id}}">
+    <a href="/view/{{$index}}"><img class="img-responsive" ng-src="{{item.image}}" alt="" /></a>
+    <h3><a href="/view/{{$index}}">{{item.title}}</a></h3>
     <div class="item-additionals">
-        <ul class="social-buttons pull-right">
+        <!-- <ul class="social-buttons pull-right">
             <li><a class="s-btn social-1" href="#"></a></li>
             <li><a class="s-btn social-2" href="#"></a></li>
             <li><a class="s-btn social-3" href="#"></a></li>
             <li><a class="s-btn social-4" href="#"></a></li>
             <li><a class="s-btn social-5" href="#"></a></li>
-        </ul>
+        </ul>-->
         <span class="date" href="#"><i class="ico-clock"></i>{{item.date}}</span>
-        <a class="author" href="#"><i class="ico-trade"></i>by {{item.author}}</a>
+        <a class="author" href="mailto:{{item.email}}"><i class="ico-trade"></i>by {{item.author}}</a>
     </div>
-    <p>{{item.text}}</p>
+    <p>{{item.body}}</p>
+    <a href="javascript:void(0)" ng-click="edit(this)" class="btn btn-sm btn-default">Edit Post</a>
+    <a href="javascript:void(0)" ng-click="delete(this)" class="btn btn-sm btn-default">Delete Post</a>
 </div>

@@ -24,7 +24,7 @@
     <div class="navbar navbar-default" role="navigation" id="navbar">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img class="img-responsive" src="img/logo.png" alt=""/>
                 </a>
             </div>
@@ -36,7 +36,7 @@
 
         <nav class="navbar-menu">
             <div class="container">
-                <a class="navbar-brand-small" href="#">
+                <a class="navbar-brand-small" href="/">
                     <img src="img/logo-small.png" alt=""/>
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -75,11 +75,10 @@
 
             <!-- Content -->
             <section class="content cell">
-                <!-- Blog Items -->
-                <div blog></div>
-                <!-- "Add Post" Single Button -->
-                <button class="btn btn-primary" ng-click="showModal()">Add New Post</button>
-<!--
+                <ng-view></ng-view>
+
+
+                <!--
                 <input ng-model="word">
                 <span habra-habr-work="word" habra="NehabraParent">
                     <span habra-habr-work="word" habra="NehabraChild"></span>
@@ -114,10 +113,11 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/responsive.js"></script>
-    <script src="scripts/app.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/services.js"></script>
+    <script src="scripts/controllers/routing.js"></script>
     <script src="scripts/controllers/about.js"></script>
     <!-- endbuild -->
     </body>
